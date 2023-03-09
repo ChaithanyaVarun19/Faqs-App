@@ -1,22 +1,23 @@
-import {Component} from 'react'
+// Write your code here.
 import FaqItem from '../FaqItem'
 
-class Faqs extends Component {
-  render() {
-    const {faqsList} = this.props
-    return (
-      <div>
-        <div>
-          <h1> FAQs</h1>
-          <ul>
-            {faqsList.map(eachOne => (
-              <FaqItem key={eachOne.id} faqDetails={eachOne} />
-            ))}
-          </ul>
-        </div>
+import './index.css'
+
+const Faqs = props => {
+  const {faqsList} = props
+
+  return (
+    <div className="app-container">
+      <div className="faqs-container">
+        <h1 className="heading">FAQs</h1>
+        <ul className="faqs-list">
+          {faqsList.map(eachFaq => (
+            <FaqItem key={eachFaq.id} faqDetails={eachFaq} />
+          ))}
+        </ul>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Faqs
